@@ -2,13 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:play_music/localization/localization_ext.dart';
+import 'package:play_music/page/splash_screen.dart';
+import 'package:play_music/utils/ScreenUtils.dart';
 
 import 'localization/localization.dart';
 
-String currentLanguage = "zh_hans11";
+String currentLanguage = "en";
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  runApp(const SplashScreen());
+  await Future.sync(() => Future.delayed(Duration(seconds: 5))) // 此处可以加载耗时资源
+      .then((value) => runApp(const MyApp()))
+      .then((value) {
+    ScreenUtils.init(360);
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -18,21 +25,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'play music'.t,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: MyHomePage(title: '首页'.t),
-      localizationsDelegates: const [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate
-      ],
-      supportedLocales: const [Locale('en', 'US'), Locale('zh', 'CN')],
-      translations: Localization(),
-      locale: Locale('zh_hans'),
-    );
+        title: 'play music'.t,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: MyHomePage(title: 'home'.t),
+        localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate
+        ],
+        supportedLocales: const [Locale('en', 'US'), Locale('zh', 'CN')],
+        translations: Localization(),
+        locale: Locale(currentLanguage));
   }
 }
 
@@ -70,6 +76,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   setState(() {});
                 },
                 child: Text("switch language".t)),
+
+            Container(
+              width: 360.dp,
+              height: 30.dp,
+              color: Colors.red,
+            )
+
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
