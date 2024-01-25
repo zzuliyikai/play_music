@@ -8,6 +8,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.asset(
       'images/bg_beautiful_girl.png',
+      fit: BoxFit.cover,
     );
   }
 }
