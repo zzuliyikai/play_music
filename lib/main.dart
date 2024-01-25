@@ -13,7 +13,7 @@ String currentLanguage = "en";
 void main() async {
   runApp(const SplashScreen());
   await Future.sync(
-          () => Future.delayed(const Duration(seconds: 3))) // 此处可以加载耗时资源
+          () => Future.delayed(const Duration(seconds: 1))) // 此处可以加载耗时资源
       .then((value) => runApp(const MyApp()))
       .then((value) {
     ScreenUtils.init(360);
@@ -41,6 +41,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: const [Locale('en', 'US'), Locale('zh', 'CN')],
       translations: Localization(),
       locale: Locale(currentLanguage),
+      defaultTransition: Transition.rightToLeft,
       debugShowCheckedModeBanner: false,
     );
   }

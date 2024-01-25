@@ -5,6 +5,7 @@ import 'package:play_music/utils/screen_utils.dart';
 import 'package:play_music/widget/banner_widget.dart';
 
 import '../../../cache/res_cache_manager.dart';
+import '../../page/audio_play/audio_play_page.dart';
 import 'home_logic.dart';
 
 class HomePage extends StatelessWidget {
@@ -35,11 +36,9 @@ class HomePage extends StatelessWidget {
           ),
           TextButton(
               onPressed: () {
-                ResCacheManager.download(
-                        "http://117.50.174.22:80/music/花海.mp3", "mp3")
-                    .then((value) => print("value = $value"));
+                Get.toNamed(audioPlayPage);
               },
-              child: Text("download"))
+              child: Text("播放页面".t))
         ],
       ),
     );

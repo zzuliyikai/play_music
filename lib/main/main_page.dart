@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:play_music/localization/localization_ext.dart';
-import 'package:play_music/page/main/collect/collect_page.dart';
-import 'package:play_music/page/main/home/home_page.dart';
-import 'package:play_music/page/main/profile/profile_page.dart';
+import 'package:play_music/main/collect/collect_page.dart';
+import 'package:play_music/main/home/home_page.dart';
+import 'package:play_music/main/profile/profile_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
