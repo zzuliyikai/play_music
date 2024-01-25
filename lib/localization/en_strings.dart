@@ -1,6 +1,4 @@
 const Map<String, String> strings = {
-  "play music": "play music",
-  "hello flutter": "hello flutter",
-  "switch language": "switch language",
-  "home": "home",
+  "玩音乐": "play music",
+  "首页": "home",
 };

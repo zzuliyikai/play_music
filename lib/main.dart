@@ -3,7 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:play_music/localization/localization_ext.dart';
 import 'package:play_music/page/splash_screen.dart';
-import 'package:play_music/utils/ScreenUtils.dart';
+import 'package:play_music/utils/screen_utils.dart';
 
 import 'localization/localization.dart';
 
@@ -25,12 +25,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-        title: 'play music'.t,
+        title: '玩音乐'.t,
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: MyHomePage(title: 'home'.t),
+        home: MyHomePage(title: '首页'.t),
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
@@ -63,19 +63,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'hello flutter'.t,
-            ),
-            TextButton(
-                onPressed: () {
-                  if (currentLanguage == 'en') {
-                    currentLanguage = 'zh_hans';
-                  } else {
-                    currentLanguage = 'en';
-                  }
-                  setState(() {});
-                },
-                child: Text("switch language".t)),
 
             Container(
               width: 360.dp,
