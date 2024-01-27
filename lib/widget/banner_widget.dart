@@ -38,10 +38,9 @@ class _BannerWidgetState extends State<BannerWidget> {
       return Container(
         margin: EdgeInsets.all(16.dp),
         decoration: BoxDecoration(
-            color: Colors.grey, borderRadius: BorderRadius.circular(8.dp)),
-        child: Center(
-          child: Text(widget.list[index].desc),
-        ),
+            borderRadius: BorderRadius.circular(8.dp),
+            image:
+            DecorationImage(image: NetworkImage(widget.list[index].url), fit: BoxFit.cover))
       );
     } else if (index == 1) {
       return Container(
@@ -49,28 +48,23 @@ class _BannerWidgetState extends State<BannerWidget> {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.dp),
             image:
-                DecorationImage(image: NetworkImage(widget.list[index].url), fit: BoxFit.cover)),
-        child: Center(
-          child: Text(widget.list[index].desc),
-        ),
+                DecorationImage(image: NetworkImage(widget.list[index].url), fit: BoxFit.cover))
       );
     } else if (index == 2) {
       return Container(
         margin: EdgeInsets.all(16.dp),
         decoration: BoxDecoration(
-            color: Colors.green, borderRadius: BorderRadius.circular(8.dp)),
-        child: Center(
-          child: Text(widget.list[index].desc),
-        ),
+            borderRadius: BorderRadius.circular(8.dp),
+            image:
+            DecorationImage(image: NetworkImage(widget.list[index].url), fit: BoxFit.cover))
       );
     } else {
       return Container(
         margin: EdgeInsets.all(16.dp),
         decoration: BoxDecoration(
-            color: Colors.yellow, borderRadius: BorderRadius.circular(8.dp)),
-        child: Center(
-          child: Text(widget.list[index].desc),
-        ),
+            borderRadius: BorderRadius.circular(8.dp),
+            image:
+            DecorationImage(image: NetworkImage(widget.list[index].url), fit: BoxFit.cover)),
       );
     }
   }

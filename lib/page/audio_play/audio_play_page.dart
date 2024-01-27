@@ -14,19 +14,35 @@ class AudioPlayPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final logic = Get.put(AudioPlayLogic());
 
-    return Scaffold(
-      body: Center(
-        child: TextButton(
-          onPressed: () {
-            ResCacheManager.download(
-                    "http://zzyikai.store/music/bencao.mp3", "mp3")
-                .then((value) {
-              if (value != null) {
-                logic.playMusic(value);
-              }
-            });
-          },
-          child: Text("播放".t),
+    return PopScope(
+      child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text("播放详情".t),
+        ),
+        body: Center(
+          child: Column(
+            children: [
+              TextButton(
+                onPressed: () {
+
+                  logic.playMusic(logic.musicItem.url);
+                  // ResCacheManager.download(logic.musicItem.url, "mp3")
+                  //     .then((value) {
+                  //   if (value != null) {
+                  //     logic.playMusic(value);
+                  //   }
+                  // });
+                },
+                child: Text("播放".t),
+              ),
+              TextButton(
+                  onPressed: () {
+                    logic.pauseMusic();
+                  },
+                  child: Text("暂停".t))
+            ],
+          ),
         ),
       ),
     );
