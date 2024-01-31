@@ -6,7 +6,7 @@ import 'package:play_music/utils/screen_utils.dart';
 import 'package:play_music/widget/banner_widget.dart';
 
 import '../../../cache/res_cache_manager.dart';
-import '../../page/audio_play/audio_play_page.dart';
+import '../../page/audio_play/audio_detail_page.dart';
 import 'home_logic.dart';
 
 class HomePage extends StatelessWidget {
