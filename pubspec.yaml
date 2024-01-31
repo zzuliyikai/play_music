@@ -45,6 +45,8 @@ dependencies:
   crypto: ^3.0.1
   flutter_easyloading: ^3.0.5   #简单的加载loading
   audioplayers: ^0.18.0
+  webview_flutter: ^4.4.4
+  cached_network_image: ^3.3.1
 
 dev_dependencies:
   flutter_test:

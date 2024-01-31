@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:play_music/localization/localization_ext.dart';
 import 'package:play_music/page/music_list/music_list_page.dart';
+import 'package:play_music/page/web_view/web_view_page.dart';
 import 'package:play_music/utils/screen_utils.dart';
 import 'package:play_music/widget/banner_widget.dart';
 
@@ -20,7 +21,10 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(
-            height: MediaQuery.of(context).padding.top,
+            height: MediaQuery
+                .of(context)
+                .padding
+                .top,
           ),
           Container(
             height: kToolbarHeight,
@@ -36,7 +40,9 @@ class HomePage extends StatelessWidget {
                   child: Text("每日推荐".t)),
               Text("歌单".t),
               Text("排行榜".t),
-              Text("有声书".t),
+              InkWell(onTap: () {
+                Get.toNamed(webViewPageRouterName);
+              }, child: Text("有声书".t)),
             ],
           ),
         ],

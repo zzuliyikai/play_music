@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:play_music/utils/screen_utils.dart';
 
@@ -37,34 +38,38 @@ class _BannerWidgetState extends State<BannerWidget> {
     if (index == 0) {
       return Container(
         margin: EdgeInsets.all(16.dp),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.dp),
-            image:
-            DecorationImage(image: NetworkImage(widget.list[index].url), fit: BoxFit.cover))
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(8.dp),
+          child: CachedNetworkImage(
+              imageUrl: widget.list[index].url, fit: BoxFit.cover),
+        ),
       );
     } else if (index == 1) {
       return Container(
         margin: EdgeInsets.all(16.dp),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.dp),
-            image:
-                DecorationImage(image: NetworkImage(widget.list[index].url), fit: BoxFit.cover))
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(8.dp),
+          child: CachedNetworkImage(
+              imageUrl: widget.list[index].url, fit: BoxFit.cover),
+        ),
       );
     } else if (index == 2) {
       return Container(
         margin: EdgeInsets.all(16.dp),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.dp),
-            image:
-            DecorationImage(image: NetworkImage(widget.list[index].url), fit: BoxFit.cover))
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(8.dp),
+          child: CachedNetworkImage(
+              imageUrl: widget.list[index].url, fit: BoxFit.cover),
+        ),
       );
     } else {
       return Container(
         margin: EdgeInsets.all(16.dp),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.dp),
-            image:
-            DecorationImage(image: NetworkImage(widget.list[index].url), fit: BoxFit.cover)),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(8.dp),
+          child: CachedNetworkImage(
+              imageUrl: widget.list[index].url, fit: BoxFit.cover),
+        ),
       );
     }
   }

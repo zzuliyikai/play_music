@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:play_music/localization/localization_ext.dart';
@@ -61,11 +62,14 @@ class MusicListPage extends StatelessWidget {
             Container(
               width: 40.dp,
               height: 40.dp,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(musicItem.preview)),
-                  borderRadius: BorderRadius.circular(4.dp)),
+
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(4.dp),
+                child: CachedNetworkImage(
+                  imageUrl: musicItem.preview,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
             SizedBox(
               width: 16.dp,

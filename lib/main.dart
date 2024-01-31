@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:play_music/localization/localization_ext.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
       locale: Locale(currentLanguage),
       defaultTransition: Transition.rightToLeft,
       debugShowCheckedModeBanner: false,
+      builder: EasyLoading.init(),
     );
   }
 }
